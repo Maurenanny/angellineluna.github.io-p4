@@ -1,4 +1,5 @@
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('./sw.js');
+    console.log("Es compatible sin hjkjhkkhj");
+ 
+    navigator.serviceWorker.register("./sw.js");
 }
-
