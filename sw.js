@@ -1,26 +1,29 @@
-self.addEventListener('install', (event) => {
-    console.log('SW: install');
-    const cachePromise = caches.open('cache-v1').then((cache) => {
+self.addEventListener('install', (event)=>{
+    console.log("Se inicializó");
+    const promiseCache = caches.open('cache-v0.1').then((cache)=>{
         return cache.addAll(
             [
                 './',
                 './index.html',
-                './css/style.css',
-                './js/app.js',
                 './pages/dividir.html',
-                './pages/sumar.html',
-                './pages/restar.html',
                 './pages/multiplicar.html',
-                'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css',
-                'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js'
+                './pages/restar.html',
+                './pages/sumar.html',
+                './css/styles.css',
+                './css/apps.css',
+                './js/app.js',
+                'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
+                'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
+                'https://code.jquery.com/jquery-3.6.1.min.js'
             ]
         );
     })
-    event.waitUntil(cachePromise);
+
+    event.waitUntil(promiseCache);
 });
 
-self.addEventListener('fetch', (event) => {
-    console.log(event.request.url);
-    const cacheRes = caches.match(event.request);
-    event.respondWith(cacheRes);
+
+self.addEventListener('fetch', (event)=>{
+    const respCaches = caches.match(event.request);
+    event.respondWith(respCaches);
 });
