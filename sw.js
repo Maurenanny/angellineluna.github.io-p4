@@ -10,7 +10,7 @@ self.addEventListener('install', (event) => {
                 './pages/dividir.html',
                 './pages/sumar.html',
                 './pages/restar.html',
-                './pages/multiplicar.html',
+                './pages/mutiplicar.html',
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css',
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js'
             ]
